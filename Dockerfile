@@ -17,7 +17,8 @@ RUN apt-get update && apt-get install -y \
 
 # Install Python libraries
 RUN pip install --upgrade pip && \
-    pip install jupyterlab torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+    pip install jupyterlab && \
+    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
 
 # Copy and set entrypoint script
 COPY dockerd-entrypoint.sh /usr/local/bin/dockerd-entrypoint.sh
